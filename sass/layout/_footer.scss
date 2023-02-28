@@ -1,0 +1,22 @@
+@use "../utils/variables" as var;
+
+footer {
+    padding: var.$layout-outer-padding;
+    background-color: #444;
+    color: white;
+    & h3 {
+        font-family: 'Shrikhand';
+    }
+    & li {
+        line-height: 1.7em;
+        font-weight: 500;
+        & .icon {
+            display: inline-block;
+            width: 20px;
+        }
+    }
+
+    & a {
+        color: white;
+    }
+}

@@ -1,0 +1,13 @@
+@use "../utils/variables";
+@use "../utils/mixins";
+
+.omf-buttons {
+    height: 46px;
+    margin: 20px 0;
+    padding: 0 15px;
+    background: linear-gradient(to right bottom, variables.$color-secondary, variables.$color-primary);
+    color: white;
+    border-radius: 23px;
+    border: none;
+    @include mixins.drop-shadow(#aaa);
+}

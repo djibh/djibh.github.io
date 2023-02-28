@@ -1,0 +1,32 @@
+@use "../components/step-numbers";
+@use "../utils/variables" as var;
+@use "../utils/mixins" as mix;
+
+#instructions {
+  padding: 0 var.$layout-outer-padding;
+  margin-bottom: 40px;
+  & h2 {
+    font-size: var.$headline2-size;
+  }
+}
+
+#steps-list {
+  padding-left: 10px;
+}
+
+.step {
+  width: 100%;
+  display: flex;
+  &__card {
+    @include mix.step-card;
+  }
+  &__text {
+    justify-content: start;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #444;
+    &-icon {
+      @include mix.step-card-icon;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use "../utils/variables";
+@use "../components/buttons";
+
+#call-to-action {
+  margin-bottom: 40px;
+  padding: 20px variables.$layout-outer-padding;
+  padding-bottom: 20px;
+  background-color: variables.$color-lightgrey;
+  & h2 {
+    text-align: center;
+    font-size: 1.3em;
+  }
+  & p {
+    font-weight: 300;
+  }
+}

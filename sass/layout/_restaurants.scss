@@ -1,0 +1,10 @@
+@use "../utils/variables";
+@use "../components/cards";
+
+#restaurants {
+  padding: variables.$layout-outer-padding;
+  background-color: variables.$color-lightgrey;
+  & h2 {
+    margin-bottom: 20px;
+  }
+}

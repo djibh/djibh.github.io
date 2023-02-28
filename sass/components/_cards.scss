@@ -1,0 +1,74 @@
+@use "../utils/variables" as var;
+@use "../utils/mixins" as mix;
+
+#restaurants h2 {
+  font-size: var.$headline2-size;
+}
+
+.restaurants {
+  &__card {
+    position: relative;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 20px;
+    @include mix.drop-shadow;
+    & img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
+    }
+  }
+  &__info {
+    display: flex;
+    padding: 15px;
+    line-height: 1.5;
+    & .description {
+      width: 80%;
+      font-size: var.$cards-font-size;
+      & .name {
+        margin: 0;
+        text-align: left;
+      }
+      & .city {
+        text-align: left;
+      }
+    }
+    & .favorites {
+      position: relative;
+      width: 20%;
+      height: 100%;
+      font-size: 1.8em;
+      line-height: 0;
+      padding: 10px 0;
+      z-index: 10;
+      & .heart {
+        &-outline {
+          position: relative;
+          color: black;
+        }
+        &-full {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      &:hover .heart-full {
+        display: inline;
+        color: var.$color-secondary;
+      }
+    }
+  }
+  &__new-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px;
+    border-radius: 3px;
+    background-color: var.$color-tertiary;
+    color: #449e88;
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+}

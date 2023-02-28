@@ -1,0 +1,9 @@
+@use "../utils/variables";
+
+#location {
+    padding: 20px 0;
+    background-color: variables.$color-darkgrey;
+    & i {
+        margin-right: 10px;
+    }
+}
