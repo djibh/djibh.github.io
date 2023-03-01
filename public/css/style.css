@@ -28,6 +28,7 @@ header {
 
 .omf-buttons {
   height: 46px;
+  width: 15em;
   margin: 20px 0;
   padding: 0 15px;
   background: linear-gradient(to right bottom, #FF79DA, #9356DC);
@@ -137,11 +138,11 @@ header {
   width: 90%;
   font-size: 1.1em;
 }
-.restaurants__info .description .name {
+.restaurants__info .description .title {
   margin: 0;
   text-align: left;
 }
-.restaurants__info .description .city {
+.restaurants__info .description .subtitle {
   text-align: left;
 }
 .restaurants__info .favorites {
@@ -158,12 +159,14 @@ header {
   color: black;
 }
 .restaurants__info .favorites .heart-full {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
+  transform: scale(0);
+  transition: 150ms ease-out;
 }
 .restaurants__info .favorites i:hover .heart-full {
+  transform: scale(1);
   display: inline;
   color: #FF79DA;
 }
@@ -196,7 +199,7 @@ footer h3 {
   font-family: "Shrikhand";
 }
 footer li {
-  line-height: 1.7em;
+  line-height: 1.8em;
   font-weight: 500;
 }
 footer li .icon {
@@ -213,6 +216,148 @@ footer a {
 }
 #location i {
   margin-right: 10px;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+#banner {
+  content: url(../../public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  width: 100%;
+  object-fit: cover;
+}
+
+#menu-layout {
+  width: 100%;
+  background-color: rgb(235, 235, 235);
+  border-radius: 40px 40px 0 0;
+  display: inline-block;
+  margin-top: -4em;
+}
+
+#menu__header,
+article {
+  padding: 0 1em;
+}
+
+#menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#restaurant-name {
+  font-family: "Shrikhand";
+  font-weight: 400;
+  font-size: 1.8em;
+}
+
+.divider {
+  margin: 5px 0;
+  height: 5px;
+  width: 40px;
+  background-color: green;
+}
+
+#menu-layout .restaurants__card {
+  position: relative;
+  margin-bottom: 1.2em;
+  padding: 0 1em;
+  opacity: 0;
+  animation: show-meals 1s ease-in-out forwards;
+  overflow: hidden;
+}
+@keyframes show-meals {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#menu-layout .restaurants__card:nth-child(1n) {
+  animation-delay: 0.25s;
+}
+#menu-layout .restaurants__card:nth-child(2n) {
+  animation-delay: 0.5s;
+}
+#menu-layout .restaurants__card:nth-child(3n) {
+  animation-delay: 0.75s;
+}
+#menu-layout .restaurants__card:nth-child(4n) {
+  animation-delay: 1s;
+}
+#menu-layout .restaurants__card:nth-child(5n) {
+  animation-delay: 1.25s;
+}
+#menu-layout .restaurants__card .description {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: last baseline;
+  width: 100%;
+  transition: 0.5s ease-out;
+}
+#menu-layout .restaurants__card .description:first-child * {
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#menu-layout .restaurants__card .price {
+  width: 10%;
+  margin-left: 0.8em;
+}
+#menu-layout .restaurants__card .checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  background-color: rgb(167, 189, 167);
+  color: white;
+  font-size: 1.8em;
+  width: 20%;
+  transition: left 0.5s ease-out;
+}
+#menu-layout .restaurants__card .checkbox-container i {
+  transform: rotate(0deg);
+  transition: 0.4s ease-out;
+}
+#menu-layout .restaurants__card:hover .description {
+  width: 80%;
+}
+#menu-layout .restaurants__card:hover .checkbox-container {
+  left: 80%;
+}
+#menu-layout .restaurants__card:hover i {
+  color: white;
+  transform: rotate(360deg);
+}
+
+article {
+  margin-bottom: 3em;
+}
+
+@media only screen and (min-width: 768px) {
+  #banner {
+    max-height: 330px;
+  }
+  #menu-layout {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #menu-layout {
+    max-width: 1400px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

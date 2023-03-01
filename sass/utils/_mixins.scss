@@ -27,3 +27,19 @@
 @mixin drop-shadow($color: #ddd) {
     filter: drop-shadow(0px 4px 5px $color);
 }
+
+@mixin show-meals() {
+  @keyframes show-meals {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}n) {
+      animation-delay: #{$i * 0.25}s;
+    }
+  }
+}

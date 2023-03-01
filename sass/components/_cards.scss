@@ -26,11 +26,11 @@
     & .description {
       width: 90%;
       font-size: var.$cards-font-size;
-      & .name {
+      & .title {
         margin: 0;
         text-align: left;
       }
-      & .city {
+      & .subtitle {
         text-align: left;
       }
     }
@@ -48,13 +48,15 @@
           color: black;
         }
         &-full {
-          display: none;
           position: absolute;
           top: 0;
           left: 0;
+          transform: scale(0);
+          transition: 150ms ease-out;
         }
       }
       & i:hover .heart-full {
+        transform: scale(1);
         display: inline;
         color: var.$color-secondary;
       }
