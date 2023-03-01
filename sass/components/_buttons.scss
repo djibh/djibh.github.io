@@ -1,13 +1,21 @@
-@use "../utils/variables";
-@use "../utils/mixins";
+@use "../utils/variables" as var;
+@use "../utils/mixins" as mix;
+
+$color-gradient: linear-gradient(to right bottom, var.$color-secondary, var.$color-primary);
 
 .omf-buttons {
     height: 46px;
     margin: 20px 0;
     padding: 0 15px;
-    background: linear-gradient(to right bottom, variables.$color-secondary, variables.$color-primary);
+    background: $color-gradient;
     color: white;
     border-radius: 23px;
     border: none;
-    @include mixins.drop-shadow(#aaa);
+    @include mix.drop-shadow(#aaa);
+    &:hover {
+        background: linear-gradient(to right bottom,
+                    lighten(var.$color-secondary, 2%),
+                    lighten(var.$color-primary, 3%));
+        @include mix.drop-shadow(#888);
+    }
 }

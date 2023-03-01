@@ -1,8 +1,8 @@
-@use "../utils/variables";
+@use "../utils/variables" as var;
 
 #location {
     padding: 20px 0;
-    background-color: variables.$color-darkgrey;
+    background-color: var.$color-darkgrey;
     & i {
         margin-right: 10px;
     }
