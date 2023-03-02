@@ -387,13 +387,13 @@ h3 {
   transform: rotate(0deg);
   transition: 0.3s ease-out;
 }
-#menu-layout .restaurants__card:hover .description {
+#menu-layout .restaurants__card:active .description {
   width: 80%;
 }
-#menu-layout .restaurants__card:hover .checkbox-container {
+#menu-layout .restaurants__card:active .checkbox-container {
   left: 80%;
 }
-#menu-layout .restaurants__card:hover i {
+#menu-layout .restaurants__card:active i {
   color: white;
   transform: rotate(360deg);
 }
