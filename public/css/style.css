@@ -154,6 +154,9 @@ header {
   padding: 10px 0;
   z-index: 10;
 }
+.restaurants__info .favorites .heart {
+  transition: 150ms;
+}
 .restaurants__info .favorites .heart-outline {
   position: relative;
   color: black;
@@ -165,7 +168,10 @@ header {
   transform: scale(0);
   transition: 150ms ease-out;
 }
-.restaurants__info .favorites i:hover .heart-full {
+.restaurants__info .favorites i:hover {
+  transform: scale(0.98);
+}
+.restaurants__info .favorites .heart-full {
   transform: scale(1.01);
   display: inline;
   color: #FF79DA;
@@ -272,6 +278,9 @@ h3 {
   font-size: 1.7em;
   margin-right: 1em;
 }
+#menu__header .favorites .heart {
+  transition: 150ms;
+}
 #menu__header .favorites .heart-outline {
   position: relative;
   color: black;
@@ -283,7 +292,10 @@ h3 {
   transform: scale(0);
   transition: 150ms ease-out;
 }
-#menu__header .favorites i:hover .heart-full {
+#menu__header .favorites i:hover {
+  transform: scale(0.98);
+}
+#menu__header .favorites .heart-full {
   transform: scale(1.01);
   display: inline;
   color: #FF79DA;

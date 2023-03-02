@@ -25,11 +25,12 @@
 }
 
 @mixin drop-shadow($color: #ddd) {
-    filter: drop-shadow(0px 4px 5px $color);
+  filter: drop-shadow(0px 4px 5px $color);
 }
 
 @mixin favorites-handler() {
   .heart {
+    transition: 150ms;
     &-outline {
       position: relative;
       color: black;
@@ -42,7 +43,10 @@
       transition: 150ms ease-out;
     }
   }
-  & i:hover .heart-full {
+  & i:hover {
+    transform: scale(0.98);
+  }
+  & .heart-full {
     transform: scale(1.01);
     display: inline;
     color: var.$color-secondary;
@@ -63,5 +67,4 @@
       animation-delay: #{$i * 0.25}s;
     }
   }
-  
 }
