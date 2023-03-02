@@ -28,6 +28,27 @@
     filter: drop-shadow(0px 4px 5px $color);
 }
 
+@mixin favorites-handler() {
+  .heart {
+    &-outline {
+      position: relative;
+      color: black;
+    }
+    &-full {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: scale(0);
+      transition: 150ms ease-out;
+    }
+  }
+  & i:hover .heart-full {
+    transform: scale(1);
+    display: inline;
+    color: var.$color-secondary;
+  }
+}
+
 @mixin show-meals() {
   @keyframes show-meals {
     from {
@@ -42,4 +63,5 @@
       animation-delay: #{$i * 0.25}s;
     }
   }
+  
 }

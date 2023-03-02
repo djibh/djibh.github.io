@@ -42,23 +42,8 @@
       line-height: 0;
       padding: 10px 0;
       z-index: 10;
-      & .heart {
-        &-outline {
-          position: relative;
-          color: black;
-        }
-        &-full {
-          position: absolute;
-          top: 0;
-          left: 0;
-          transform: scale(0);
-          transition: 150ms ease-out;
-        }
-      }
-      & i:hover .heart-full {
-        transform: scale(1);
-        display: inline;
-        color: var.$color-secondary;
+      & {
+        @include mix.favorites-handler;
       }
     }
   }
