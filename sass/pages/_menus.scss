@@ -39,6 +39,7 @@ h3 {
   display: inline-block;
   margin-top: -4em;
   padding-top: 1em;
+  padding-bottom: 2em;
 }
 
 #menu__header,
@@ -61,6 +62,7 @@ h3 {
 
 .menu__sections {
   position: relative;
+  margin-bottom: 3em;
 }
 
 .title::after {
@@ -151,10 +153,6 @@ h3 {
       }
     }
   }
-}
-
-article {
-  margin-bottom: 3em;
 }
 
 @media only screen and (min-width: 768px) {
