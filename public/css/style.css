@@ -169,9 +169,9 @@ header {
   transition: 150ms ease-out;
 }
 .restaurants__info .favorites i:hover {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
-.restaurants__info .favorites .heart-full {
+.restaurants__info .favorites i:hover .heart-full {
   transform: scale(1.01);
   display: inline;
   color: #FF79DA;
@@ -293,9 +293,9 @@ h3 {
   transition: 150ms ease-out;
 }
 #menu__header .favorites i:hover {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
-#menu__header .favorites .heart-full {
+#menu__header .favorites i:hover .heart-full {
   transform: scale(1.01);
   display: inline;
   color: #FF79DA;

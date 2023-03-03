@@ -44,12 +44,12 @@
     }
   }
   & i:hover {
-    transform: scale(0.98);
-  }
-  & .heart-full {
-    transform: scale(1.01);
-    display: inline;
-    color: var.$color-secondary;
+    transform: scale(0.97);
+    & .heart-full {
+      transform: scale(1.01);
+      display: inline;
+      color: var.$color-secondary;
+    }
   }
 }
 
