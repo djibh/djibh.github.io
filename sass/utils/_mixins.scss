@@ -69,3 +69,61 @@
     }
   }
 }
+
+@mixin loader($device-map) {
+  display: grid;
+  place-content: center;
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  inset: 0;
+  z-index: 5;
+  animation: fade 0.8s 2.2s ease-out forwards;
+  &::before {
+    content: "";
+    display: inline-block;
+    background: url(../../public/img/logo/ohmyfood.png) center no-repeat;
+    height: map-get($map: $device-map, $key: "height");
+    width: map-get($map: $device-map, $key: "width");
+    background-size: 100%;
+    opacity: 0.9;
+    animation: fade 1s 1.2s ease-out forwards;
+  }
+  & #spinner {
+    background: var.$color-gradient-spinner;
+    opacity: 1;
+    margin: auto;
+    height: map-get($map: $device-map, $key: "spin-outter-radius");
+    width: map-get($map: $device-map, $key: "spin-outter-radius");
+    border-radius: 50%;
+    animation: spin 1.2s ease-in-out forwards;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: white;
+      margin: auto;
+      height: map-get($map: $device-map, $key: "spin-inner-radius");
+      width: map-get($map: $device-map, $key: "spin-inner-radius");
+      border-radius: 50%;
+    }
+  }
+
+  @keyframes fade {
+    100% {
+      opacity: 0%;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes spin {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(540deg);
+      opacity: 0;
+    }
+  }
+}

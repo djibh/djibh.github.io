@@ -18,9 +18,14 @@ $color-gradient-spinner: linear-gradient(
 );
 
 // UNITS
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 992px;
 $layout-outer-padding: 1em;
 $layout-outer-padding-tablet: 4em;
 $headline2-size: 1.8em;
 $headline2-size-tablet: 2.5rem;
 $headline3-size-tablet: 1.5rem;
 $cards-font-size: 1.1em;
+$loader-mobile:("height": 100px, "width": 250px, "spin-outter-radius": 40px, "spin-inner-radius": 34px);
+$loader-tablet:("height": 160px, "width": 400px, "spin-outter-radius": 60px, "spin-inner-radius": 54px);
+$loader-desktop:("height": 300px, "width": 500px, "spin-outter-radius": 70px, "spin-inner-radius": 64px);
