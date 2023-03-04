@@ -1,16 +1,30 @@
-@use "../utils/variables";
+@use "../utils/variables" as var;
 @use "../components/buttons";
 
 #call-to-action {
-  margin-bottom: 40px;
-  padding: 20px variables.$layout-outer-padding;
-  padding-bottom: 20px;
-  background-color: variables.$color-lightgrey;
+  margin-bottom: 2.5em;
+  padding: 1.1em var.$layout-outer-padding;
+  padding-bottom: 1.4em;
+  background-color: var.$color-lightgrey;
   & h2 {
     text-align: center;
     font-size: 1.3em;
+    font-weight: 500;
   }
   & p {
     font-weight: 300;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #call-to-action {
+    padding: var.$layout-outer-padding-tablet;
+    padding-bottom: 3em;
+    & h2 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
   }
 }

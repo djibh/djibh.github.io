@@ -1,9 +1,68 @@
 @use "../utils/variables" as var;
 
-#location {
-    padding: 20px 0;
-    background-color: var.$color-darkgrey;
-    & i {
-        margin-right: 10px;
+#loader {
+  display: grid;
+  place-content: center;
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  inset: 0;
+  z-index: 5;
+  animation: fade 0.8s 2.2s ease-out forwards;
+  &::before {
+    content: url(../../public/img/logo/ohmyfood.png);
+    opacity: 0.9;
+    animation: fade 1s 1.2s ease-out forwards;
+  }
+  & #spinner {
+    position: relative;
+    background: var.$color-gradient-spinner;
+    opacity: 1;
+    margin: 2em auto;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    animation: spin 1.2s ease-in-out forwards;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: white;
+      margin: auto;
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
     }
+  }
+
+  @keyframes fade {
+    100% {
+      opacity: 0%;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes spin {
+    0%, 50% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(540deg);
+      opacity: 0;
+    }
+  }
+}
+
+#location {
+  padding: 20px 0;
+  background-color: var.$color-darkgrey;
+  & i {
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #location {
+    font-size: 1.5rem;
+  }
 }

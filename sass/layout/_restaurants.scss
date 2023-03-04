@@ -1,10 +1,20 @@
-@use "../utils/variables";
+@use "../utils/variables" as var;
 @use "../components/cards";
 
 #restaurants {
-  padding: variables.$layout-outer-padding;
-  background-color: variables.$color-lightgrey;
+  padding: var.$layout-outer-padding;
+  background-color: var.$color-lightgrey;
   & h2 {
     margin-bottom: 20px;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #restaurants {
+    padding: var.$layout-outer-padding-tablet;
+    & h2 {
+      font-size: var.$headline2-size-tablet;
+    }
   }
 }

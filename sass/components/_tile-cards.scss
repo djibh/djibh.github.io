@@ -1,0 +1,77 @@
+@use "../utils/mixins" as mix;
+@use "../utils/variables" as var;
+
+@use "../components/checkbox";
+
+.menu {
+  &__cards {
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    @include mix.drop-shadow;
+    margin-bottom: 1.2em;
+    padding: 0 1em;
+    opacity: 0;
+    animation: show-meals 1s ease-in-out forwards;
+    overflow: hidden;
+    @include mix.show-meals;
+    & .description {
+      display: flex;
+      overflow: hidden;
+      justify-content: space-between;
+      align-items: last baseline;
+      padding: 0.6em 0;
+      width: 100%;
+      transition: 0.3s ease-out;
+      line-height: 1.8;
+      &:first-child * {
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      & h3 {
+        font-size: 1.2em;
+        margin: 0;
+      }
+      & span {
+        font-weight: 400;
+        font-size: 1.1em;
+      }
+      & .price {
+        width: 10%;
+        margin-left: 0.8em;
+        font-size: 1.1em;
+        overflow: initial;
+      }
+    }
+    &:hover {
+      & .description {
+        width: 80%;
+      }
+      & .checkbox-container {
+        left: 80%;
+      }
+      & i {
+        color: white;
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #location {
+    font-size: 1.5rem;
+  }
+
+  .menu__cards .description {
+    h3 {
+      font-size: var.$headline3-size-tablet;
+    }
+    & span,
+    .price {
+      font-size: 1.4rem;
+    }
+  }
+}

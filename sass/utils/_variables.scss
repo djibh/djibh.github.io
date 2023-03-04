@@ -1,12 +1,26 @@
-// COLORS 
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-$color-darkgrey: rgb(235, 235,235);
-$color-lightgrey: rgb(245,245,245);
+// COLORS
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+$color-darkgrey: rgb(235, 235, 235);
+$color-lightgrey: rgb(245, 245, 245);
 $color-pastelgreen: rgb(185, 192, 185);
+$color-gradient: linear-gradient(
+  to right bottom,
+  $color-secondary,
+  $color-primary
+);
+$color-gradient-spinner: linear-gradient(
+  to right bottom,
+  white,
+  $color-secondary,
+  $color-primary
+);
 
 // UNITS
-$layout-outer-padding: 25px;
+$layout-outer-padding: 1em;
+$layout-outer-padding-tablet: 4em;
 $headline2-size: 1.8em;
+$headline2-size-tablet: 2.5rem;
+$headline3-size-tablet: 1.5rem;
 $cards-font-size: 1.1em;

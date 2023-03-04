@@ -1,6 +1,11 @@
 @use "../utils/variables" as var;
 @use "../utils/mixins" as mix;
 
+@use "../components/logo";
+@use "../components/banner";
+
+@use "../components/tile-cards";
+
 h2 {
   font-weight: 300;
 }
@@ -9,27 +14,10 @@ h3 {
   font-weight: 500;
 }
 
-#logo {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  & a {
-    position: absolute;
-    right: 90%;
-    font-size: 1.5em;
-    color: #777;
-  }
-  & img {
-    width: 40%;
-    max-width: 15em;
-  }
-}
-
-#banner {
-  width: 100%;
-  max-height: 20em;
-  object-fit: cover;
+#restaurant-name {
+  font-family: "Shrikhand";
+  font-weight: 400;
+  font-size: 1.8em;
 }
 
 #menu-layout {
@@ -61,8 +49,11 @@ h3 {
 }
 
 .menu__sections {
-  position: relative;
   margin-bottom: 3em;
+  &-title {
+    position: relative;
+    margin-bottom: 2rem;
+  }
 }
 
 .title::after {
@@ -75,89 +66,17 @@ h3 {
   position: absolute;
 }
 
-#restaurant-name {
-  font-family: "Shrikhand";
-  font-weight: 400;
-  font-size: 1.8em;
-}
-
-#menu-layout {
-  .restaurants__card {
-    position: relative;
-    margin-bottom: 1.2em;
-    padding: 0 1em;
-    opacity: 0;
-    animation: show-meals 1s ease-in-out forwards;
-    overflow: hidden;
-    @include mix.show-meals;
-    & .description {
-      display: flex;
-      overflow: hidden;
-      justify-content: space-between;
-      align-items: last baseline;
-      padding: 0.6em 0;
-      width: 100%;
-      transition: 0.3s ease-out;
-      line-height: 1.8;
-      &:first-child * {
-        text-align: left;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-      & h3 {
-        font-size: 1.4em;
-        margin: 0;
-      }
-      & span {
-        font-weight: 400;
-        font-size: 1.15em;
-        // margin-top: 0;
-      }
-      & .price {
-        width: 10%;
-        margin-left: 0.8em;
-        overflow: initial;
-      }
-    }
-
-    & .checkbox-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      left: 100%;
-      height: 100%;
-      background-color: var.$color-pastelgreen;
-      color: white;
-      font-size: 1.8em;
-      width: 20%;
-      transition: left 0.3s ease-out;
-      & i {
-        transform: rotate(0deg);
-        transition: 0.3s ease-out;
-      }
-    }
-
-    &:hover {
-      & .description {
-        width: 80%;
-      }
-      & .checkbox-container {
-        left: 80%;
-      }
-      & i {
-        color: white;
-        transform: rotate(360deg);
-      }
-    }
-  }
-}
-
 @media only screen and (min-width: 768px) {
+  #restaurant-name {
+    font-size: 2.2rem;
+  }
   #menu-layout {
     width: 90%;
+    margin: 0 3em;
+    margin-top: -4em;
+  }
+  #menu__header .favorites {
+    font-size: 2.5rem;
   }
 }
 
@@ -165,5 +84,13 @@ h3 {
   #menu-layout {
     // width: 70%;
     max-width: 1400px;
+    & .menu__sections {
+      width: 30%;
+    }
+  }
+
+  #menu__flex-container {
+    display: flex;
+    justify-content: space-between;
   }
 }

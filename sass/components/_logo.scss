@@ -1,0 +1,16 @@
+#logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & a {
+    position: absolute;
+    right: 90%;
+    font-size: 1.5em;
+    color: #777;
+  }
+  & img {
+    width: 40%;
+    max-width: 17em;
+  }
+}

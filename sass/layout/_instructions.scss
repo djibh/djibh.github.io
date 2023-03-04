@@ -7,6 +7,7 @@
   margin-bottom: 20px;
   & h2 {
     font-size: var.$headline2-size;
+    font-weight: 500;
   }
 }
 
@@ -22,11 +23,24 @@
   }
   &__text {
     justify-content: start;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     font-weight: 500;
     color: #444;
     &-icon {
       @include mix.step-card-icon;
     }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #instructions {
+    padding: 0 64px;
+    & h2 {
+      font-size: var.$headline2-size-tablet;
+    }
+  }
+
+  .step__text {
+    font-size: 1.4rem;
   }
 }
