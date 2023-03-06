@@ -61,7 +61,7 @@ $step-number-radius: 12px;
 
   $step-number-radius: 15px;
   #steps-list {
-    padding-left: $step-number-radius / 2;
+    padding-left: calc($step-number-radius / 2);
   }
 
   .step {

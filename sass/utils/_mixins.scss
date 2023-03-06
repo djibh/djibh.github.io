@@ -45,12 +45,18 @@
     }
   }
   & i:hover {
-    transform: scale(0.98);
     color: var.$color-secondary;
-    .heart-full {
+    i, .heart-full {
       transform: scale(1);
       display: inline;
-      color: var.$color-secondary;
+      background: -webkit-linear-gradient(
+        250deg,
+        var.$color-primary,
+        var.$color-secondary
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
