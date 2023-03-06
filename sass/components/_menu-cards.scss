@@ -40,7 +40,7 @@
       }
       & .price {
         width: 10%;
-        margin-left: 0.8em;
+        margin: 0 0.8em;
         font-size: 1.1em;
         overflow: initial;
       }
@@ -60,7 +60,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: var.$tablet-breakpoint) {
   #location {
     font-size: 1.5rem;
   }

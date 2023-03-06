@@ -1,4 +1,4 @@
-@use "../components/step-numbers";
+// @use "../components/step-numbers";
 @use "../utils/variables" as var;
 @use "../utils/mixins" as mix;
 
@@ -11,13 +11,17 @@
   }
 }
 
+$step-number-radius: 12px;
 #steps-list {
-  padding-left: 10px;
+  padding-left: $step-number-radius;
+  counter-reset: steps-counter;
 }
 
 .step {
+  position: relative;
   width: 100%;
   display: flex;
+  counter-increment: steps-counter;
   &__card {
     @include mix.step-card;
   }
@@ -30,9 +34,24 @@
       @include mix.step-card-icon;
     }
   }
+  &::before {
+    content: counter(steps-counter);
+    position: absolute;
+    display: grid;
+    place-content: center;
+    height: $step-number-radius * 2;
+    width: $step-number-radius * 2;
+    left: -$step-number-radius;
+    top: 40px - $step-number-radius;
+    border-radius: 50%;
+    background-color: var.$color-primary;
+    color: white;
+    line-height: 1.5;
+    z-index: 1;
+  }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: var.$tablet-breakpoint) {
   #instructions {
     padding: 0 64px;
     & h2 {
@@ -40,7 +59,40 @@
     }
   }
 
-  .step__text {
-    font-size: 1.4rem;
+  $step-number-radius: 15px;
+  #steps-list {
+    padding-left: $step-number-radius / 2;
+  }
+
+  .step {
+    &__text {
+      font-size: 1.35rem;
+    }
+    &::before {
+      display: grid;
+      place-content: center;
+      height: $step-number-radius * 2;
+      width: $step-number-radius * 2;
+      left: -$step-number-radius;
+      top: 40px - $step-number-radius;
+    }
+  }
+}
+
+@media only screen and (min-width: var.$desktop-breakpoint) {
+  #steps-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .step {
+      width: 30%;
+      &__text {
+        text-align: left;
+      }
+      &::before {
+        display: grid;
+        place-content: center;
+      }
+    }
   }
 }

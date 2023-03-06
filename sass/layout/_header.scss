@@ -1,9 +1,11 @@
+@use "../utils/variables" as var;
+
 header {
     padding: 20px 0 ;
     box-shadow: 0px 3px 10px grey ;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: var.$tablet-breakpoint) {
     header {
         padding: 2em;
     }
