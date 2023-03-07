@@ -12,6 +12,12 @@
     background-color: white;
     border-radius: 20px;
     @include mix.drop-shadow;
+    & a {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+    }
     & img {
       width: 100%;
       aspect-ratio: 16/10;
