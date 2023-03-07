@@ -25,17 +25,16 @@
       transition: 0.3s ease-out;
       line-height: 1.8;
       &:first-child * {
+        text-align: left;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
       }
       & h3 {
-        text-align: left;
         font-size: 1.2em;
         margin: 0;
       }
       & span {
-        text-align: left;
         font-weight: 400;
         font-size: 1.1em;
       }
@@ -44,7 +43,6 @@
         margin: 0 0.7em;
         font-size: 1.1em;
         overflow: initial;
-        text-align: right;
       }
     }
     &:hover {
